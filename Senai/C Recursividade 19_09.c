@@ -47,6 +47,23 @@ int binario(int posicao, char *bin, int numero){
     }
 }
 
+int decimalParaBinario(int decimal, int binario, int posicao) 
+{    
+	if (decimal == 0) 
+	{        
+		return binario;     
+	} 
+	else
+	{       
+		int bit = decimal % 2;         
+		binario = binario + bit * posicao;         
+		posicao *= 10;         
+		decimal = decimal / 2;         
+		return decimalParaBinario(decimal, binario, posicao);    
+	}
+}
+
+
 #include<stdio.h>
 #include<Windows.h>
 #include<time.h>
@@ -101,5 +118,16 @@ int main()
         binario(posicao, bin, numero);
         
     }
+//}
+//Exemplo do prof Nicolas:
+
+// #include<stdio.h>
+// int main() 
+// {    
+int n = 50;    
+int posicaoInicial = 1;
+// Chama a função para converter 50 para binário e imprime o resultado    
+		printf("%d", decimalParaBinario(50, 0, posicaoInicial));
+    return 0;
 //}
 }
