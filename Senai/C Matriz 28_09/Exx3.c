@@ -7,6 +7,7 @@ int main()
     int *ptr = matriz;
     int matriz_nova[3][3];
     int *ptr_nova = matriz_nova;
+    int n = -2, k = -2;
     
     
 
@@ -14,13 +15,22 @@ int main()
     {
         for (int j = 2; j > -1; j--)//coluna
         {
-            *(ptr_nova + i * 3 + j) = *(ptr + i * 3 + j);
+            *(ptr_nova + (i+n) * 3 + (j+k)) = *(ptr + i * 3 + j);
             
+          k = k +2; 
+        }
+
+        k = -2;
+        n = n + 2; 
+    }
+
+    for (int i = 0; i < 3; i++) //linha
+    {
+        for (int j = 0; j < 3; j++)//coluna
+        {
             printf("%i",  *(ptr_nova + i * 3 + j));
             printf("\t");
         }
         printf("\n");
     }
-    
-
 }
