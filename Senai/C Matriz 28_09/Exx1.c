@@ -3,26 +3,24 @@
 #include<stdio.h>
 int main()
 {
-    int numeros[8] = {2 ,7 , 3, 15, 9, 14 ,20, 1};
+    int numeros[2][3] = {{50, 30 , 103}, {15, 0, 100}};
     int *ptr = numeros;
-    int maior = 0;
+    int valor = 0, linha, coluna;
 
-    for (int i = 0; i < 9; i++)
-    {   
-        int comparado = *(ptr + i);
-
-        for (int j = 0; j < 9; j++)
+    for (int i = 0; i < 2; i++) // linha
+    { 
+        for (int j = 0; j < 3; j++) // coluna
         {
-            if (comparado > *(ptr + j))
+            
+            if (valor < *(ptr + i*3 +j))
             {
-                maior++;
-            }
-            else if (maior >= 7)
-            {
-                printf("O maior numero e o %i\n", *(ptr + i));
-                printf("E ele esta em %i na lista.", i+1);
+                valor = *(ptr + i*3 +j);
+                linha = i + 1;
+                coluna = j + 1;
+                
             }
         } 
-        maior = 0;
     }
+    printf("O maior numero e o %i\n", valor);
+    printf("E ele esta na linha %i na coluna %i.", linha, coluna);
 }
