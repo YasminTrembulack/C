@@ -7,6 +7,7 @@
 int main()
 {
     int tamanho;
+    int soma = 0;
    
     printf("Digite a quantidade de numeros: ");
     scanf("%i", &tamanho);
@@ -19,8 +20,16 @@ int main()
         scanf("%i", &array[i]);
     }
 
+    printf("\nNumeros recebidos: \n");
     for (int i = 0; i < tamanho; i++)
-    {
+    {   
         printf("%i \t", array[i]);
+
+        if (array[i] % 2 != 0)
+        {
+            soma = soma + array[i];
+        }
+        
     }
+    printf("\nA soma dos numero impares e: %i", soma);
 }
