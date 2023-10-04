@@ -5,7 +5,6 @@
 #include<stdio.h>
 int main()
 {
-    
     char matriz[5][10] = {{'A', 'B', 'C', 'B', 'A', 'A', 'D', 'B', 'C', 'C'},
                         {'A', 'B', 'C', 'B', 'A', 'A', 'D', 'B', 'C', 'C'},
                         {'A', 'B', 'C', 'B', 'A', 'A', 'D', 'B', 'C', 'C'},
@@ -36,6 +35,4 @@ int main()
         printf(" %i \t", notas[i]);
     }
     
-
-
 }
