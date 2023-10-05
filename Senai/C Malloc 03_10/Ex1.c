@@ -32,4 +32,5 @@ int main()
         
     }
     printf("\nA soma dos numero impares e: %i", soma);
+    free(array);
 }
