@@ -4,6 +4,7 @@
 //ımpares presentes no vetor
 #include <stdio.h>
 #include<stdlib.h>
+
 int main()
 {
     int tamanho;
@@ -33,4 +34,5 @@ int main()
     }
     printf("\nA soma dos numero impares e: %i", soma);
     free(array);
+    
 }
