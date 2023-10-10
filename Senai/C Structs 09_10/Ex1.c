@@ -20,46 +20,49 @@ typedef struct
     int Mes;
     int Ano;
 
-    char Descricao[15];
-}
-Compromisso;
+    char Descricao[150];
+} Compromisso;
 
 int main()
 {
-   Compromisso pessoa;
+    Compromisso pessoa;
 
     printf("HORA : MINUTO : SEGUNDOS\n");
     scanf("%i", &pessoa.Hora);
     scanf("%i", &pessoa.Minuto);
     scanf("%i", &pessoa.Segundos);
-    
+
     printf("DIA : MES : ANO\n");
     scanf("%i", &pessoa.Dia);
     scanf("%i", &pessoa.Mes);
     scanf("%i", &pessoa.Ano);
 
     printf("DESCRICAO:\n");
-    scanf("%i", &pessoa.Descricao);
-    
+    scanf("%s", &pessoa.Descricao);
+
     if (pessoa.Segundos > 59)
     {
         pessoa.Minuto++;
         pessoa.Segundos -= 60;
     }
-    else if (pessoa.Minuto)
+    else if (pessoa.Minuto > 59)
     {
         pessoa.Hora++;
         pessoa.Minuto -= 60;
     }
-    else if (pessoa.Hora > 60)
+    else if (pessoa.Hora > 23)
     {
-       pessoa.Hora -=24;
-       pessoa.Dia++;
+        pessoa.Hora -= 24;
+        pessoa.Dia++;
     }
+
+    printf("\n%i/", pessoa.Dia);
+    printf("%i/", pessoa.Mes);
+    printf("%i  -  ", pessoa.Ano);
+
     printf("%i:", pessoa.Hora);
     printf("%i:", pessoa.Minuto);
-    printf("%i", pessoa.Segundos);
+    printf("%i\n", pessoa.Segundos);
 
-
-
+    printf("%s", pessoa.Descricao);
 }
