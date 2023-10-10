@@ -20,7 +20,7 @@ int main()
         printf("Digite o nome do aluno: ");
         scanf("%s", pessoas[i].Nome);
 
-        printf("Digite o número da matricula: ");
+        printf("Digite o numero da matricula: ");
         scanf("%i", &pessoas[i].Nmatricula);
 
         printf("Qual o curso? ");
