@@ -45,14 +45,16 @@ int main()
         free(lista);
         break;
     case 2:
+        arquivo = fopen("ListaTelefonica.txt", "r");
         scanf("%s", &nomeProcurado);
-        while (fgets(linha, sizeof(linha), arquivo) != NULL) 
+        while (fgets(linha, sizeof(linha), arquivo) != EOF) 
         {
             if (strcmp(linha, nomeProcurado) == 0) 
             {
                 printf("Nome encontrado: %s", linha);
             }
         }
+        fclose(arquivo);
         break;
         
     default:
