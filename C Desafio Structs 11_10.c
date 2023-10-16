@@ -41,12 +41,14 @@ int main()
 
             fprintf(arquivo, "%s %i \n",lista[i].Nome, lista[i].Telefone);
         }
+        fclose(arquivo);
+        free(lista);
         break;
     case 2:
         scanf("%s", &nomeProcurado);
         while (fgets(linha, sizeof(linha), arquivo) != NULL) 
         {
-            if (strstr(linha, nomeProcurado) != NULL) 
+            if (strcmp(linha, nomeProcurado) == 0) 
             {
                 printf("Nome encontrado: %s", linha);
             }
