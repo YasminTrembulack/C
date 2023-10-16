@@ -18,7 +18,7 @@ int main()
     char linha[100];
     char nomeProcurado[15];
 
-    printf(" 1 - Adicionar nova pessoa. \n 2 - Procurar pessoa.");
+    printf(" 1 - Adicionar nova pessoa. \n 2 - Procurar pessoa.\n>");
     scanf("%i", &op);
 
     switch (op)
