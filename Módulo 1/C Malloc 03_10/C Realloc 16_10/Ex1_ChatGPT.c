@@ -1,21 +1,14 @@
-// 1 - Aloque memória dinamicamente para ler um novo tipo de dados criado por você. 
-// Você deverá ler veículos(Modelo, Fabricante ,Cor, Ano, Valor). 
-// Quem decide a quantidade de veículos a serem lidos é o usuário do programa. 
-// Insira em um arquivo de texto os veículos e mostre dentro do programa a lista inserida.
-
-
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct 
+typedef struct
 {
-    char Modelo[20];
-    char Fabricante[20];
-    char Cor[20];
+    char Modelo[100];
+    char Fabricante[100];
+    char Cor[100];
     int Ano;
     int Valor;
-}Veiculo;
-
+} Veiculo;
 
 int main()
 {
@@ -24,13 +17,12 @@ int main()
     int op = 0;
     char linha[100];
 
-    FILE * arquivo;
+    FILE *arquivo;
 
     printf("Quantos veiculos deseja adicionar: ");
-    scanf("%i", &tamanho);
+    scanf("%d", &tamanho);
 
     Veiculo *lista = malloc(tamanho * sizeof(Veiculo));
-
     while (sair != 1)
     {
         int novoTamanho = 0;
@@ -48,12 +40,12 @@ int main()
             scanf("%s", lista[i].Cor);
 
             printf("Ano: ");
-            scanf("%i", &lista[i].Ano);
+            scanf("%d", &lista[i].Ano);
 
             printf("Valor: ");
-            scanf("%i", &lista[i].Valor);
+            scanf("%d", &lista[i].Valor);
 
-            fprintf(arquivo, "Modelo: %s\tFabricante: %s\tCor: %s\tAno: %i\tValor: %i\n", lista[i].Modelo, lista[i].Fabricante, lista[i].Cor, lista[i].Ano, lista[i].Valor);
+            fprintf(arquivo, "Modelo: %s Fabricante: %s Cor: %s Ano: %d Valor: %d\n", lista[i].Modelo, lista[i].Fabricante, lista[i].Cor, lista[i].Ano, lista[i].Valor);
         }
         fclose(arquivo);
 
@@ -63,24 +55,26 @@ int main()
             printf("%s", linha);
         }
         fclose(arquivo);
-        
-        printf("Deseja adicionar mais veiculos? ( 1 - Sim / 2 - Nao ): ");
-        scanf("%i", &op);
+
+        printf("Deseja adicionar mais veiculos? (1 - Sim / 2 - Nao): ");
+        scanf("%d", &op);
 
         switch (op)
         {
         case 1:
             printf("Quantos veiculos deseja adicionar: ");
-            scanf("%i", &novoTamanho);
-            
+            scanf("%d", &novoTamanho);
+
             lista = realloc(lista, (tamanho + novoTamanho) * sizeof(Veiculo));
+
             tamanho = novoTamanho;
             break;
         case 2:
             sair = 1;
             break;
         }
-    } 
+    }
+
     free(lista);
     return 0;
 }
