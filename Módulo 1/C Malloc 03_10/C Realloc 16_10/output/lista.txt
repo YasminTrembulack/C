@@ -1,0 +1,9 @@
+Modelo: gol     Fabricante: volkswagen  Cor: preto  Ano: 2005   Valor: 30000
+Modelo: fusca   Fabricante: volkswagen  Cor: azul   Ano: 2000   Valor: 25000
+Modelo: aaa     Fabricante: aaa     Cor: aaa    Ano: 4444   Valor: 4444
+Modelo: celta   Fabricante: chevrolet   Cor: cinza  Ano: 2010   Valor: 35000
+Modelo: bbb     Fabricante: bbb     Cor: bbb    Ano: 111    Valor: 111
+Modelo: ccc     Fabricante: ccc     Cor: ccc    Ano: 111    Valor: 111
+Modelo: ddd     Fabricante: ddd     Cor: ddd    Ano: 111    Valor: 111
+Modelo: sla     Fabricante: sla     Cor: sla    Ano: 6435   Valor: 8576
+Modelo: fff     Fabricante: fff     Cor: fff    Ano: 555    Valor: 555
